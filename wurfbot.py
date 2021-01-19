@@ -87,7 +87,7 @@ class Wurfbot(TgBot):
     def choose(self, cmd: list, update: Update, context: CallbackContext) -> str:
         try:
             return random.choice(
-                update.message['text'].split(' ', 2)[1].split('|')
+                update.message['text'].split(' ', 1)[1].split('|')
             )
         except Exception as e:
             return "usage: `/choose 2b|!bb|...`"
