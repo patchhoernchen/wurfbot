@@ -97,7 +97,7 @@ class Wurfbot(TgBot):
                 dice=None,
                 insult=self.insult()
             )
-        base = {'0x': 16, '0o': 8, '0t': 3, '0q': 4}.get(cmd[1][0:2], 10)
+        base = {'0x': 16, '0o': 8, '0b': 2, '0t': 3, '0q': 4}.get(cmd[1][0:2], 10)
         try:
             if base == 10:
                 _dice = cmd[1]
