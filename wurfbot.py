@@ -52,12 +52,14 @@ class Wurfbot(TgBot):
 
     IMPOSSIBLE_DICE = [
         "i refuse to roll a dice with {dice} sides{insult}",
-        "your impossible dice fell into the edge.",
+        "your impossible dice fell onto the edge.",
+        "you dice fell off the table and you cannot find it anywhere. its lost.",
     ]
 
     EMPTY_DICE = [
         "\"Nothing\" is not a valid number of sides for a dice{insult}",
         "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "you stepped onto one of the formerly lost dices and your left foot hurts. you loose 1w3 health.",
     ]
 
     def setup_handler(self) -> None:
