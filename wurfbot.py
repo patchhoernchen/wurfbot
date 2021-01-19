@@ -98,11 +98,8 @@ class Wurfbot(TgBot):
                 insult=self.insult()
             )
         base = {'0x': 16, '0o': 8, '0b': 2, '0t': 3, '0q': 4}.get(cmd[1][0:2], 10)
+        _dice = cmd[1] if base == 10 else cmd[1][2:]
         try:
-            if base == 10:
-                _dice = cmd[1]
-            else:
-                _dice = cmd[1][2:]
             dice = int(_dice, base)
         except ValueError as e:
             return self.MAGIC_WORDS.get(
