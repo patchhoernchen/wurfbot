@@ -43,6 +43,7 @@ class Wurfbot(TgBot):
         "its a {result}. deal with it, {user}",
         "a {result}! but the dice fell of the table.",
         "the dice atilt, but it's a {result}",
+        "the dice fell of the table and you cannot find it. find a new one and roll again",
     ]
     MAGIC_NUMBERS = {
         5: "{user} rolled a {result} - Heil Eris",
