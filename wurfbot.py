@@ -90,7 +90,7 @@ class Wurfbot(TgBot):
                 update.message['text'].split(' ', 2)[1].split('|')
             )
         except Exception as e:
-            return "usage: `/choose pest|cholera|covid`"
+            return "usage: `/choose 2b|!bb|...`"
 
     @tgcmd
     def src(self, cmd: list, update: Update, context: CallbackContext) -> str:
