@@ -46,16 +46,18 @@ class Wurfbot(TgBot):
 
     NONMAGIC_WORDS = "{dice} is not an integer{insult}"
     MAGIC_WORDS = {
-        "rick": 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        "rick": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         "pi": "if you role pi you get a diameter of 1.",
     }
 
     IMPOSSIBLE_DICE = [
         "i refuse to roll a dice with {dice} sides{insult}",
+        "your impossible dice fell into the edge.",
     ]
 
     EMPTY_DICE = [
         "\"Nothing\" is not a valid number of sides for a dice{insult}",
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     ]
 
     def setup_handler(self) -> None:
