@@ -39,7 +39,7 @@ class Wurfbot(TgBot):
     NONMAGIC_NUMERS = [
         "{user} rolled a `{result}`.",
         "{user} rolled a `{result}`, deal with it.",
-        "{user} rolled a `{result}`, pleased to server you.",
+        "{user} rolled a `{result}`, pleased to serve you.",
         "You rolled a `{result}`",
         "You rolled a `{result}`, grats.",
         "You rolled a `{result}`. Really.",
