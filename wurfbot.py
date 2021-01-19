@@ -68,7 +68,7 @@ class Wurfbot(TgBot):
     IMPOSSIBLE_DICE = [
         "I refuse to roll a dice with {dice} sides{insult}",
         "Your impossible dice fell onto the edge.",
-        "The dice fell off the table and you cannot find it anywhere. Its lost.",
+        "The dice fell off the table and you cannot find it anywhere. But don't worry, it was broken anyway.",
     ]
 
     EMPTY_DICE = [
