@@ -26,24 +26,29 @@ from tgbot import (
 class Wurfbot(TgBot):
 
     INSULTS = [
-        ", you stupid dumb fuck!",
         ", you sun of a beach!",
         ", you human!",
-        ", you acid container containing lifeform!",
         ", [your insult HERE].",
-        ". I'll punch you like an initiative!",
         ".",
         ". Sorry Dave, I'm afraid I can't do that.",
+        ". Do you live in a black hole?",
+        ". And the earth is not flat!",
+        ". And furthermore I encourage Mrs. Scheeres to resign as senator of education.",
     ]
 
     NONMAGIC_NUMERS = [
-        "{user} rolled a `{result}`",
-        "you rolled a `{result}`",
-        "the dice choose `{result}` to be enough for you, {user}",
-        "its a `{result}`. deal with it, {user}",
-        "a `{result}`! but the dice fell of the table.",
-        "the dice atilt, but it's a `{result}`",
-        "the dice fell of the table and you cannot find it. find a new one and roll again",
+        "{user} rolled a `{result}`.",
+        "{user} rolled a `{result}`, deal with it.",
+        "{user} rolled a `{result}`, pleased to server you.",
+        "You rolled a `{result}`",
+        "You rolled a `{result}`, grats.",
+        "You rolled a `{result}`. Really.",
+        "The dice choose `{result}` to be enough for you, {user}.",
+        "It's a `{result}`.",
+        "It's a `{result}`. Deal with it, {user}.",
+        "A `{result}`! But the dice fell of the table.",
+        "The dice atilt, but it's a `{result}`.",
+        "The dice fell of the table and you cannot find it. Find a new one and roll again.",
     ]
     MAGIC_NUMBERS = {
         5: "{user} rolled a `{result}` - Heil Eris",
@@ -52,24 +57,24 @@ class Wurfbot(TgBot):
         1337: "{user} rolled a `{result}` \o/",
     }
 
-    NONMAGIC_WORDS = "{dice} is not an integer{insult}"
+    NONMAGIC_WORDS = "{dice} is not an integer{insult}."
     MAGIC_WORDS = {
         "rick": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-        "pi": "if you role pi you get a diameter of 1.",
-        "cookie": "sure, but you need to come to the dark side.",
-        "cookies": "sure, but you need to come to the dark side.",
+        "pi": "When you role pi you get a diameter of 1.",
+        "cookie": "Sure, but you need to come to the dark side.",
+        "cookies": "Sure, but you need to come to the dark side.",
     }
 
     IMPOSSIBLE_DICE = [
-        "i refuse to roll a dice with {dice} sides{insult}",
-        "your impossible dice fell onto the edge.",
-        "the dice fell off the table and you cannot find it anywhere. its lost.",
+        "I refuse to roll a dice with {dice} sides{insult}",
+        "Your impossible dice fell onto the edge.",
+        "The dice fell off the table and you cannot find it anywhere. Its lost.",
     ]
 
     EMPTY_DICE = [
         "\"Nothing\" is not a valid number of sides for a dice{insult}",
         "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-        "you stepped onto one of the formerly lost dices and your left foot hurts. you loose 1w3 health.",
+        "You stepped onto one of the formerly lost dices and your left foot hurts. You loose 1w3 health.",
     ]
 
     def setup_handler(self) -> None:
