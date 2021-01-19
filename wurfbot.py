@@ -36,7 +36,14 @@ class Wurfbot(TgBot):
         ". Sorry Dave, I'm afraid I can't do that.",
     ]
 
-    NONMAGIC_NUMERS = "{user} rolled a {result}"
+    NONMAGIC_NUMERS = [
+        "{user} rolled a {result}",
+        "you rolled a {result}",
+        "the dice choose {result} to be enough for you, {user}",
+        "its a {result}. deal with it, {user}",
+        "a {result}! but the dice fell of the table.",
+        "the dice atilt, but it's a {result}",
+    ]
     MAGIC_NUMBERS = {
         5: "{user} rolled a {result} - Heil Eris",
         23: "{user} rolled a {result} - Nothing is what it seems.",
@@ -48,6 +55,8 @@ class Wurfbot(TgBot):
     MAGIC_WORDS = {
         "rick": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         "pi": "if you role pi you get a diameter of 1.",
+        "cookie": "sure, but you need to come to the dark side.",
+        "cookies": "sure, but you need to come to the dark side.",
     }
 
     IMPOSSIBLE_DICE = [
@@ -89,7 +98,11 @@ class Wurfbot(TgBot):
             )
         base = {'0x': 16, '0o': 8, '0t': 3, '0q': 4}.get(cmd[1][0:2], 10)
         try:
-            dice = int(cmd[1][2:], base)
+            if base == 10:
+                _dice = cmd[1]
+            else:
+                _dice = cmd[1][2:]
+            dice = int(_dice, base)
         except ValueError as e:
             return self.MAGIC_WORDS.get(
                 cmd[1].lower(),
@@ -111,7 +124,7 @@ class Wurfbot(TgBot):
             r = random.randrange(1, dice+1)
             return self.MAGIC_NUMBERS.get(
                 r,
-                self.NONMAGIC_NUMERS
+                random.choice(self.NONMAGIC_NUMERS)
             ).format(
                 user=update.message.from_user.full_name,
                 result=r,
