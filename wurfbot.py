@@ -37,19 +37,19 @@ class Wurfbot(TgBot):
     ]
 
     NONMAGIC_NUMERS = [
-        "{user} rolled a {result}",
-        "you rolled a {result}",
-        "the dice choose {result} to be enough for you, {user}",
-        "its a {result}. deal with it, {user}",
-        "a {result}! but the dice fell of the table.",
-        "the dice atilt, but it's a {result}",
+        "{user} rolled a `{result}`",
+        "you rolled a `{result}`",
+        "the dice choose `{result}` to be enough for you, {user}",
+        "its a `{result}`. deal with it, {user}",
+        "a `{result}`! but the dice fell of the table.",
+        "the dice atilt, but it's a `{result}`",
         "the dice fell of the table and you cannot find it. find a new one and roll again",
     ]
     MAGIC_NUMBERS = {
-        5: "{user} rolled a {result} - Heil Eris",
-        23: "{user} rolled a {result} - Nothing is what it seems.",
-        42: "{user} rolled a {result} - Don't Panic",
-        1337: "{user} rolled a {result} \o/",
+        5: "{user} rolled a `{result}` - Heil Eris",
+        23: "{user} rolled a `{result}` - Nothing is what it seems.",
+        42: "{user} rolled a `{result}` - Don't Panic",
+        1337: "{user} rolled a `{result}` \o/",
     }
 
     NONMAGIC_WORDS = "{dice} is not an integer{insult}"

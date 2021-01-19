@@ -7,6 +7,7 @@ import config
 
 from telegram import (
     Update,
+    constants,
 )
 
 from telegram.ext import (
@@ -36,7 +37,7 @@ def tgcmd(func: callable) -> callable:
     def wrapper(bot_instance: TgBot, update: Update, context: CallbackContext):
         cmd = update.message["text"].split(' ')
         result = func(bot_instance, cmd, update, context)
-        update.message.reply_text(result)
+        update.message.reply_text(result, parse_mode=constants.PARSEMODE_MARKDOWN)
         log_result(update, result)
     return wrapper
 
