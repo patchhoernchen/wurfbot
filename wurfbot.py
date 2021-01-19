@@ -87,8 +87,9 @@ class Wurfbot(TgBot):
                 dice=None,
                 insult=self.insult()
             )
+        base = {'0x': 16, '0o': 8}.get(cmd[1][0:2], 10)
         try:
-            dice = int(cmd[1])
+            dice = int(cmd[1], base)
         except ValueError as e:
             return self.MAGIC_WORDS.get(
                 cmd[1].lower(),
