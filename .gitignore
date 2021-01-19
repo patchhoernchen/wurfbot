@@ -1,0 +1,6 @@
+tmp
+env
+__pycache__
+config.py
+config.dev.py
+config.prod.py
