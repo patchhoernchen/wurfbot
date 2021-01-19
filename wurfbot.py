@@ -81,6 +81,16 @@ class Wurfbot(TgBot):
         self.dispatcher.add_handler(CommandHandler('ping', self.ping))
         self.dispatcher.add_handler(CommandHandler('roll', self.roll))
         self.dispatcher.add_handler(CommandHandler('src', self.src))
+        self.dispatcher.add_handler(CommandHandler('choose', self.choose))
+
+    @tgcmd
+    def choose(self, cmd: list, update: Update, context: CallbackContext) -> str:
+        try:
+            return random.choice(
+                update.message['text'].split(' ', 2)[1].split('|')
+            )
+        except Exception as e:
+            return "usage: `/choose pest|cholera|covid`"
 
     @tgcmd
     def src(self, cmd: list, update: Update, context: CallbackContext) -> str:
