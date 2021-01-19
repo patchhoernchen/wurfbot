@@ -61,6 +61,11 @@ class Wurfbot(TgBot):
     def setup_handler(self) -> None:
         self.dispatcher.add_handler(CommandHandler('ping', self.ping))
         self.dispatcher.add_handler(CommandHandler('roll', self.roll))
+        self.dispatcher.add_handler(CommandHandler('src', self.src))
+
+    @tgcmd
+    def src(self, cmd: list, update: Update, context: CallbackContext) -> str:
+        return config.SRC
 
     @tgcmd
     def ping(self, cmd: list, update: Update, context: CallbackContext) -> str:
