@@ -57,12 +57,20 @@ class Wurfbot(TgBot):
         1337: "{user} rolled a `{result}` \o/",
     }
 
-    NONMAGIC_WORDS = "{dice} is not an integer{insult}."
+    NONMAGIC_WORDS = "{dice} is not an integer{insult}"
     MAGIC_WORDS = {
         "rick": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         "pi": "When you role pi you get a diameter of 1.",
         "cookie": "Sure, but you need to come to the dark side.",
         "cookies": "Sure, but you need to come to the dark side.",
+        "spd": "{dice} is not integer{insult}",
+        "cdu": "{dice} is not integer{insult}",
+        "afd": "{dice} sucks!",
+        "npd": "{dice} stinks!",
+        "fdp": "{dice} is integer, but their ethics sucks!",
+        "p": "d",
+        "p": "d",
+        "o": "{dice}",
     }
 
     IMPOSSIBLE_DICE = [
@@ -105,7 +113,9 @@ class Wurfbot(TgBot):
 
     @tgcmd
     def roll(self, cmd: list, update: Update, context: CallbackContext) -> str:
+        logging.debug(cmd)
         if not len(cmd) == 2:
+            logging.debug("not len ==2")
             return random.choice(self.EMPTY_DICE).format(
                 user=update.message.from_user.full_name,
                 result=None,
@@ -117,6 +127,7 @@ class Wurfbot(TgBot):
         try:
             dice = int(_dice, base)
         except ValueError as e:
+            logging.debug("int() failed")
             return self.MAGIC_WORDS.get(
                 cmd[1].lower(),
                 self.NONMAGIC_WORDS
@@ -127,6 +138,7 @@ class Wurfbot(TgBot):
                 insult=self.insult()
             )
         if dice <= 1:
+            logging.debug("number to small")
             return random.choice(self.IMPOSSIBLE_DICE).format(
                 user=update.message.from_user.full_name,
                 result=None,
@@ -134,6 +146,7 @@ class Wurfbot(TgBot):
                 insult=self.insult()
             )
         else:
+            logging.debug("generating a random number")
             r = random.randrange(1, dice+1)
             return self.MAGIC_NUMBERS.get(
                 r,
