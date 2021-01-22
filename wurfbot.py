@@ -71,6 +71,7 @@ class Wurfbot(TgBot):
         "p": "d",
         "p": "d",
         "o": "{dice}",
+        "llor/": ''.join(reversed("/roll is not an integer")),
     }
 
     IMPOSSIBLE_DICE = [
